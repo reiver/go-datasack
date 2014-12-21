@@ -5,6 +5,7 @@ import "testing"
 
 import "math"
 import "math/rand"
+import "time"
 
 
 func TestMaxWithEmptyDatasack(t *testing.T) {
@@ -28,6 +29,15 @@ func TestMaxWithEmptyDatasack(t *testing.T) {
 
 func TestMax(t *testing.T) {
 
+	// Seed the random number generator.
+	//
+	// It is import to seed the random number generator, so that
+	// we get different random number each time we run this test.
+	//
+	// If we don't seed it, then we get the same "random" numbers
+	// over and over again!
+	//
+		rand.Seed( time.Now().UTC().UnixNano() )
 
 	// We will do 10 tests. ("10" was arbitrarily chosen.)
 	//
